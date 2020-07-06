@@ -51,7 +51,10 @@
         </fieldset>
 
         <script type="text/html" id="toolbarDemo">
-
+            <div class="layui-btn-container">
+                <button class="layui-btn layui-btn-normal layui-btn-sm data-add-btn" lay-event="add"> 添加 </button>
+                <button class="layui-btn layui-btn-sm layui-btn-danger data-delete-btn" lay-event="delete"> 删除 </button>
+            </div>
         </script>
 
         <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
@@ -80,12 +83,17 @@
                 icon: 'layui-icon-tips'
             }],
             cols: [[
-                {type: "checkbox", width: "5%"},
-                {field: 'owner', width: "30%", title: 'ID'},
-                {field: 'dic_name', width: "35%", title: '用户名'},
-                {field: 'is_pass', width: "5%", title: '性别'},
-                {field: 'check_info', width: "25%",minWidth: 300, align: "center",title: '城市'},
-
+                {type: "checkbox", width: 50},
+                {field: 'id', width: 80, title: 'ID', sort: true},
+                {field: 'username', width: 80, title: '用户名'},
+                {field: 'sex', width: 80, title: '性别', sort: true},
+                {field: 'city', width: 80, title: '城市'},
+                {field: 'sign', title: '签名', minWidth: 150},
+                {field: 'experience', width: 80, title: '积分', sort: true},
+                {field: 'score', width: 80, title: '评分', sort: true},
+                {field: 'classify', width: 80, title: '职业'},
+                {field: 'wealth', width: 135, title: '财富', sort: true},
+                {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
             limit: 15,
